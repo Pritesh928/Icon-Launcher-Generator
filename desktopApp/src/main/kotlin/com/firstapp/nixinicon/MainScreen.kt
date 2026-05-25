@@ -20,7 +20,7 @@ fun MainScreen() {
     )
        {
           Button(onClick = {
-
+              PickZip()
           }){
               Text("Upload ZIP")
           }
