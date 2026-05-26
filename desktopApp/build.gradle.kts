@@ -21,8 +21,18 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.firstapp.nixinicon"
+            packageName = "Nixin Icon"
             packageVersion = "1.0.0"
+            windows {
+                //Locating app in the PC/Laptop instead of finding in directories :)
+                shortcut = true
+                menu = true
+                menuGroup = "Nixin Icon"
+                // icon directory location redirect!!
+                iconFile.set(project.file("${rootProject.rootDir}/shared/src/jvmMain/resources/icon.ico"))
+
+
+            }
         }
     }
 }
