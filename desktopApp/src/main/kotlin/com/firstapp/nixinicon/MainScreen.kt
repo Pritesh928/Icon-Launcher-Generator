@@ -34,6 +34,10 @@ fun MainScreen() {
         ){
             Button(onClick = {
                 selectedZip = PickZip()
+                if(selectedZip != null){
+                    val extracted = extractZip(selectedZip!!)
+                    print(extracted?.absolutePath)
+                }
 
             }){
                 Text("Upload ZIP")
