@@ -27,6 +27,7 @@ fun extractZip(selectedZip : File) : File?{
                 }
             }
             entry = zipStream.nextEntry
+            
         }
     }
     return tempDir
