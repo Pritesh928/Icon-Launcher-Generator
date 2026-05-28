@@ -1,4 +1,4 @@
-package com.firstapp.nixinicon
+package com.firstapp.nixinicon.ui
 
 
 import androidx.compose.foundation.gestures.snapping.SnapPosition
@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import java.io.File
 import javax.swing.JFileChooser
+import com.firstapp.nixinicon.service.PickZip
+import com.firstapp.nixinicon.service.extractZip
 
 
 @Composable
