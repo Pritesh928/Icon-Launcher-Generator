@@ -99,7 +99,7 @@ fun MainScreen() {
                 Text("Start >>>")
             }
             Text("Done SuccessFully!!!", style = TextStyle(
-                fontSize = 15.sp
+                fontSize = 20.sp
             ))
         }
     }
