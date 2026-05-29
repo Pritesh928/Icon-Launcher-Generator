@@ -46,5 +46,25 @@ fun MainScreen() {
             }
             Text(selectedZip?.name ?: "No Zip Selected")
         }
+            Button(onClick = {
+                selectedZip = PickZip()
+                if(selectedZip != null){
+                    val extracted = extractZip(selectedZip!!)
+                    print(extracted?.absolutePath)
+                }
+
+            }){
+                Text("Upload ZIP")
+            }
+                Button(onClick = {
+                    selectedZip = PickZip()
+                    if(selectedZip != null){
+                        val extracted = extractZip(selectedZip!!)
+                        print(extracted?.absolutePath)
+                    }
+
+                }){
+                    Text("Upload ZIP")
+                }
     }
 }
