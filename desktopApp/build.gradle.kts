@@ -11,7 +11,7 @@ dependencies {
 
     implementation(compose.desktop.currentOs)
     implementation(libs.kotlinx.coroutinesSwing)
-
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
     implementation(libs.compose.uiToolingPreview)
 }
 
