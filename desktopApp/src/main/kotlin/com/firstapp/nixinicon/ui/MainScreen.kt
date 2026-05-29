@@ -19,7 +19,8 @@ import java.io.File
 import javax.swing.JFileChooser
 import com.firstapp.nixinicon.service.PickZip
 import com.firstapp.nixinicon.service.extractZip
-
+import java.net.URI
+import com.firstapp.nixinicon.service.openInBrowser
 
 @Composable
 @Preview
@@ -28,12 +29,20 @@ fun MainScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
-    )
-       {
+    ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ){
+            Text("Generate")
+            Text("Generate Your own launcher icon using images clip art and more.")
+            Button(onClick = {
+                openInBrowser(URI("https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html"))
+                }){
+                    Text("Generate Icon")
+                }
+            Text("Upload")
+            Text("Upload zip file that is generated from android asset studio")
             Button(onClick = {
                 selectedZip = PickZip()
                 if(selectedZip != null){
@@ -45,26 +54,13 @@ fun MainScreen() {
                 Text("Upload ZIP")
             }
             Text(selectedZip?.name ?: "No Zip Selected")
-        }
+            Text("Locate")
+            Text("locate your project directory res folder where we can paste the icon folder's")
             Button(onClick = {
-                selectedZip = PickZip()
-                if(selectedZip != null){
-                    val extracted = extractZip(selectedZip!!)
-                    print(extracted?.absolutePath)
-                }
 
             }){
-                Text("Upload ZIP")
+                Text("Locate Dir")
             }
-                Button(onClick = {
-                    selectedZip = PickZip()
-                    if(selectedZip != null){
-                        val extracted = extractZip(selectedZip!!)
-                        print(extracted?.absolutePath)
-                    }
-
-                }){
-                    Text("Upload ZIP")
-                }
+        }
     }
 }

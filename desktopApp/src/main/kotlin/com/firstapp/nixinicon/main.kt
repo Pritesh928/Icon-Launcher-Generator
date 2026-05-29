@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import com.firstapp.nixinicon.ui.MainScreen
-import com.firstapp.nixinicon.ui.test
 
 
 fun main() = application(){
@@ -14,6 +13,6 @@ fun main() = application(){
         onCloseRequest = ::exitApplication,
         title = "Nixin Icon"
     ){
-        test()
+        MainScreen()
     }
 }
