@@ -23,15 +23,19 @@ import java.io.File
 import javax.swing.JFileChooser
 import com.firstapp.nixinicon.service.PickZip
 import com.firstapp.nixinicon.service.extractZip
-import com.firstapp.nixinicon.service.locatedir
+import com.firstapp.nixinicon.service.pickDir
 import java.net.URI
 import com.firstapp.nixinicon.service.openInBrowser
+import com.firstapp.nixinicon.service.pickDir
 import java.awt.Color
+import com.firstapp.nixinicon.service.installMipmap
+
 
 @Composable
 @Preview
 fun MainScreen() {
     var selectedZip by remember { mutableStateOf<File?>(null) }
+    var selectedDir by remember { mutableStateOf<File?>(null) }
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -75,12 +79,27 @@ fun MainScreen() {
                 fontSize = 18.sp,
             ))
             Button(onClick = {
-                locatedir()
+                selectedDir = pickDir()
             }){
                 Text("Locate Dir")
             }
+            Text(selectedDir?.absolutePath ?: "No Dir Selected")
             Text("---------------------------------------------------------------------------------------", style = TextStyle(
                 fontSize = 18.sp,
+            ))
+            Text("Fetch", style = TextStyle(
+                fontSize = 30.sp,
+            ))
+            Text("fetch new mipmap icons into your project directory", style = TextStyle(
+                fontSize = 18.sp,
+            ))
+            Button(onClick = {
+                installMipmap()
+            }){
+                Text("Start >>>")
+            }
+            Text("Done SuccessFully!!!", style = TextStyle(
+                fontSize = 15.sp
             ))
         }
     }
