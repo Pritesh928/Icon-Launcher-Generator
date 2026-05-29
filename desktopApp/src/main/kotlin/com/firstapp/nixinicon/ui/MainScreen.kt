@@ -82,11 +82,6 @@ fun MainScreen() {
             Text("---------------------------------------------------------------------------------------", style = TextStyle(
                 fontSize = 18.sp,
             ))
-            Button(onClick = {
-                
-            }){
-                Text("Start >>>")
-            }
         }
     }
 }
