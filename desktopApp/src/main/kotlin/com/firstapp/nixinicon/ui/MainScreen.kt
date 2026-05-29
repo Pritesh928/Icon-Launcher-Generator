@@ -33,7 +33,7 @@ fun MainScreen() {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
-            text = "Nixin Iconc",
+            text = "Nixin Icon",
             fontSize = 20.sp,
             fontWeight = FontWeight.Medium,
             letterSpacing = (-0.3).sp
